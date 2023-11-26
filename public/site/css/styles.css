@@ -1,6 +1,12 @@
-h1 {
-  color: blue;
-  background-color: black;
-  border-radius: 10px;
+* {
+  margin: 50px;
+  padding: 60px;
+  box-sizing: border-box;
   
+  
+}
+
+.teste{
+  background-color: blue;
+  border-radius: 10px;
 }
