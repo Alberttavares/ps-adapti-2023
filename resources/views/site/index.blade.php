@@ -11,6 +11,13 @@
 <body>
 	<header id="cabecalho">
 		<img src="{{asset('site/img/logo.png')}}" alt="LOGO OW">
+		<div id="pesquisar">
+			<form action="" method="">
+				<label for="">Pesquisar</label>
+				<input type="text" name="nome">
+			</form>
+		</div>
+
 		<nav>
 			<ul>
 				<li><a href="#">SOBRE NÓS</a></li>
@@ -21,7 +28,7 @@
 			</ul>
 		</nav>
 		<div>
-			LKSNBDALJABADSBNJ
+			<button id="darkmode"><i class="icon-darkmode"></i></button>
 		</div>
 	</header>
 	<main id="principal">
@@ -29,13 +36,13 @@
 			@foreach($alunos as $aluno)
 			<div id="card-principal" class="card">
 				<img src="{{ url($aluno->imagem) }}" class="" alt="">
-				<div class="titulo-card">{{$aluno->nome}}</div>
+				<div class="titulo-card">Nome: {{$aluno->nome}}</div>
 				@foreach($cursos as $curso)
 				@if($aluno->curso_id == $curso -> id)
-				<div class="titulo-card">Engenharia da Computação</div>
+				<div class="titulo-card">Curso: {{$curso->curso}}</div>
 				@endif
 				@endforeach
-				<div class="titulo-card">{{$aluno->descricao}}</div>
+				<div class="titulo-card">Descrição: {{$aluno->descricao}}</div>
 				<button class="botaoContratar">CONTRATAR</button>
 			</div>
 			@endforeach
