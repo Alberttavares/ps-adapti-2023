@@ -21,39 +21,39 @@ use App\Http\Controllers\AlunoController;
 |
 */
 
+Route::post('/contratar/{aluno}', 'App\http\Controllers\AlunoController@contratar')->name('aluno.contratar');
 Route::middleware('locale')->group(function () {
 
-    Route::put('/locale', [LocaleController::class, 'setLocale'])->name('locale');
+	Route::put('/locale', [LocaleController::class, 'setLocale'])->name('locale');
 
-    Route::get('/', function () {
-        return redirect()->route('dashboard');
-    });
+	Route::get('/', function () {
+		return redirect()->route('dashboard');
+	});
 
-    Auth::routes();
+	Auth::routes();
 
-    Route::middleware('auth')->group(function () {
+	Route::middleware('auth')->group(function () {
 
-        //Rota para dashboard
-        Route::any('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+		//Rota para dashboard
+		Route::any('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-        //Rotas para log
-        Route::any('log', [LogController::class, 'index'])->name('log.index');
+		//Rotas para log
+		Route::any('log', [LogController::class, 'index'])->name('log.index');
 
-        //Rotas para CRUD usuário
-        Route::resource('user', UserController::class, ['except' => ['show']]);
-        Route::resource('curso', CursoController::class, ['except' => ['show']]);
-        Route::resource('aluno', AlunoController::class);
-        
+		//Rotas para CRUD usuário
+		Route::resource('user', UserController::class, ['except' => ['show']]);
+		Route::resource('curso', CursoController::class, ['except' => ['show']]);
+		Route::resource('aluno', AlunoController::class);
 
 
-        //Rotas para perfil do usuário
-        Route::controller(ProfileController::class)->name('profile.')->group(function () {
-            Route::get('profile', 'edit')->name('edit');
-            Route::put('profile', 'update')->name('update');
-            Route::put('profile/password', 'password')->name('password');
-        });
-    });
 
-    Route::get('/', [SiteController::class, 'index'])->name('site');
+		//Rotas para perfil do usuário
+		Route::controller(ProfileController::class)->name('profile.')->group(function () {
+			Route::get('profile', 'edit')->name('edit');
+			Route::put('profile', 'update')->name('update');
+			Route::put('profile/password', 'password')->name('password');
+		});
+	});
 
+	Route::get('/', [SiteController::class, 'index'])->name('site');
 });

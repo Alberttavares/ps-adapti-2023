@@ -10,26 +10,22 @@
 
 <body>
 	<header id="cabecalho">
-		<img src="{{asset('site/img/logo.png')}}" alt="LOGO OW">
+		<img src="{{asset('site/img/LOGO_SF2.png')}}" alt="LOGO OW">
 		<div id="pesquisar">
 			<form action="" method="">
-				<label for="">Pesquisar</label>
-				<input type="text" name="nome">
+				<input type="text" placeholder="Pesquisar" name="nome">
 			</form>
 		</div>
 
-		<nav>
+		<nav id="botoes-acesso">
 			<ul>
 				<li><a href="#">SOBRE NÓS</a></li>
 				<li><a href="#">CONTATOS</a></li>
 				<li><a href="#">SERVIÇOS</a></li>
-				<li><a href="#">PORTIFÓLIO</a></li>
+
 
 			</ul>
 		</nav>
-		<div>
-			<button id="darkmode"><i class="icon-darkmode"></i></button>
-		</div>
 	</header>
 	<main id="principal">
 		<div id="conteiner-card">
@@ -42,16 +38,24 @@
 				<div class="titulo-card">Curso: {{$curso->curso}}</div>
 				@endif
 				@endforeach
+				<div class="titulo-card">Formado: {{$aluno->formado ? 'Sim' : 'Não'}}</div>
 				<div class="titulo-card">Descrição: {{$aluno->descricao}}</div>
-				<button class="botaoContratar">CONTRATAR</button>
+				<div class="botao-card">
+					@if($aluno->estaContratado)
+					<!-- <p class="event-type">CONTRATADO</p> -->
+					@else
+					<form class="form-card" action="{{ route('aluno.contratar', $aluno) }}" method="post">
+						@csrf
+
+						<button class="botaoContratar">{{$aluno->contratado ? 'CONTRATADO!' : 'CONTRATAR'}}</button>
+
+					</form>
+					@endif
+				</div>
 			</div>
 			@endforeach
 		</div>
 	</main>
-
-
-
-
 
 	<script src=" {{ asset('site/js/scripts.js') }}"></script>
 </body>

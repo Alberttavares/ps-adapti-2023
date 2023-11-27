@@ -6,14 +6,12 @@ body{
 
 }
 
-
-
 #cabecalho {
 	background-color: #ffffff;
 	display: flex;
 	justify-content:space-between;
 	align-items: center;
-	padding: 5px 30px;
+	padding: 10px 30px;
 	box-shadow: 5px 5px 15px -1px rgba(0, 0, 0, 0.41);
 }
 
@@ -24,21 +22,29 @@ body{
 #cabecalho a{
 	text-decoration: none;
 	color: black;
-	font-size: 1.5rem;
+	font-size: 1.0rem;
 	font-weight: 600;
+	
 }
 
 #cabecalho a:hover{
-	color: gray;
+	position: relative;
+	background-color:rgb(150, 150, 255);
+	padding: 10px;
+	border-radius: 100px;
 	transition: 0.25s;
+	
+	
 }
 
 #cabecalho ul{
 	list-style-type: none;
 	display: flex;
+	justify-content: center;
 	gap: 40px;
 	
 }
+
 
 #principal{
 	max-width: 1000px;
@@ -73,16 +79,41 @@ body{
 	gap: 100px;
 	margin-top: 25px;
 }
+.botao-card{
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+	display: flex;
+	align-items: flex-end;
+}
+.form-card{
+	width: 100%;
+	justify-content: center;
+	display: flex;
+}
 
 .botaoContratar{
 	border-radius: 1.2rem;
+	background-color: rgb(158, 203, 255);
+	font-size: 1rem;
+	border: 3px solid black;
+	font-weight: 600;
+	color: rgb(0, 0, 0);
+	padding: 10px;
+	width: 100%;
+}
+
+.botaoContratar:hover{
+	background-color:rgb(201, 226, 255) ;
+	transition: 0.25s;
+	cursor: pointer;
 }
 #pesquisar{
 	padding: 20px;
 	border-radius: 100px;
 	border: 3px solid #000000;
 	color: #000000;
-	font-size: 1.2rem;
+	font-size: 1.5rem;
 	font-weight: 600;
 	background-color: white;
 }
@@ -90,24 +121,8 @@ body{
 form input{
 	border: none;
 	outline: none;
-}
-
-#darkmode{
-	display: flex;
-	align-items: center;
-	padding: 0px;
-	border: none;
-}
-.icon-darkmode{
-	cursor: pointer;
-	background-color: white;
-	background-image: url('../img/dark_mode_FILL0_wght400_GRAD0_opsz24.png');
-	background-size: 30px;
-	background-position: center;
-	padding: 20px;
-	background-repeat: no-repeat;
-	border: none;
-	transition: background-color 0.3s, color 0.3s;
+	font-size: 1.3rem
+	
 }
 
 

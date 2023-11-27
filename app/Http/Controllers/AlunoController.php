@@ -40,6 +40,8 @@ class AlunoController extends Controller
 	public function store(StoreAlunoRequest $request)
 	{
 		$data = $request->all();
+		$data['contratado'] = $request->has('contratado') ? true : false;
+		$data['formado'] = $request->has('formado') ? true : false;
 		if ($request->hasFile('imagem')) {
 			$data['imagem'] = '/storage/' . $request->file('imagem')->store('aluno', 'public');
 		}
@@ -68,6 +70,8 @@ class AlunoController extends Controller
 	{
 		$data = $request->all();
 		$aluno = $this->alunos->find($id);
+		$data['contratado'] = $request->has('contratado') ? true : false;
+		$data['formado'] = $request->has('formado') ? true : false;
 
 		if ($request->hasFile('imagem')) {
 			Storage::disk('public')->delete(substr($aluno->imagem, 9));
@@ -84,5 +88,11 @@ class AlunoController extends Controller
 		Storage::delete('public/' . $aluno->imagem);
 		$aluno->delete();
 		return redirect()->route('aluno.index')->with('success', 'Aluno deletado com sucesso!');
+	}
+
+	public function contratar(Aluno $aluno)
+	{
+		$aluno->update(['contratado' => true]);
+		return redirect()->back()->with('status', 'Aluno contratado com sucesso!');
 	}
 }

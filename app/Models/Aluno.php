@@ -7,16 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Aluno extends Model
 {
-    use HasFactory;
-    protected $fillable = [
-        'nome',
-        'descricao',
-        'imagem',
-        'curso_id'
-    ];
+	use HasFactory;
+	protected $fillable = [
+		'nome',
+		'descricao',
+		'imagem',
+		'curso_id',
+		'contratado',
+		'formado'
+	];
 
-    public function cursos()
-    {
-        return $this->belongsTo(Curso::class, 'curso_id');
-    }
+	public function cursos()
+	{
+		return $this->belongsTo(Curso::class, 'curso_id');
+	}
 }
