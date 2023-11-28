@@ -1,22 +1,146 @@
-
+html{
+	scroll-behavior: smooth;
+}
 body{
 	margin: 0;
 	background-image: url('../img/fundo1.png');
 	background-size: cover;
 	font-family: lato, sans-serif;
+	transition:  1s !important;
 
 }
 
 .b-darkmode{
-	background-color: white;
+	background: none;
 	border: none;
 	padding: none;
 	cursor: pointer;
 }
 
 
+
+.light-mode #b1 {
+  background-color: #fff; 
+  transition: background-color 0.5s ease, color 0.5s ease; 
+}
+
+.dark-mode #b1 {
+  background-color: #333; 
+  color: #fff; 
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.light-mode #b2 {
+  background-color: #fff; 
+  transition: background-color 0.5s ease, color 0.5s ease; 
+}
+
+.dark-mode #b2 {
+  background-color: #333; 
+  color: #fff; 
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.light-mode #b3 {
+  background-color: #fff; 
+  transition: background-color 0.5s ease, color 0.5s ease; 
+}
+
+.dark-mode #b3 {
+  background-color: #333; 
+  color: #fff; 
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+
+.light-mode #cabecalho {
+  background-color: #fff; 
+  transition: background-color 0.5s ease, color 0.5s ease; 
+}
+
+.dark-mode #cabecalho {
+  background-color: #333; 
+  color: #fff; 
+  transition: background-color 0.5s ease, color 0.5s ease; 
+}
+.light-mode #card-principal {
+  background-color: #fff; 
+  color: #333; 
+  transition: background-color 0.5s ease, color 0.5s ease; 
+}
+
+.dark-mode #card-principal {
+  background-color: #333; 
+  color: #fff; 
+  transition: background-color 0.5s ease, color 0.5s ease; 
+}
+
+
+
+.light-mode .b-perfil {
+  background-color: #fff; 
+  transition: background-color 0.5s ease, color 0.5s ease; 
+}
+
+
+.dark-mode .b-perfil {
+  background-color: #333; 
+  color: #fff; 
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.light-mode .b-darkmode {
+  background-color: #fff; 
+  transition: background-color 0.5s ease, color 0.5s ease; 
+}
+
+
+.dark-mode .b-darkmode {
+  background-color: #333; 
+  color: #fff; 
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.light-mode .b-pesquisar {
+  background-color: #fff; 
+  transition: background-color 0.5s ease, color 0.5s ease; 
+}
+
+
+.dark-mode .b-pesquisar {
+  background-color: #333; 
+  color: #fff; 
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.light-mode #pesquisar {
+  background-color: #fff; 
+	border: 3px solid #000000;
+  transition: background-color 0.5s ease, color 0.5s ease; 
+}
+
+
+.dark-mode #pesquisar {
+  background-color: #333; 
+  color: #fff; 
+	border: 3px solid #ffffff;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.light-mode #interior-pesquisa {
+  background-color: #fff; 
+  transition: background-color 0.5s ease, color 0.5s ease; 
+}
+
+
+.dark-mode #interior-pesquisa {
+  background-color: #333; 
+  color: #fff; 
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+
+
 .b-perfil{
-	background-color: white;
+	background: none;
 	border: none;
 	padding: none;
 	cursor: pointer;
@@ -36,7 +160,7 @@ body{
 	display: flex;
 }
 .b-pesquisar{
-	background-color: white;
+	background: none;
 	border: none;
 	padding: none;
 	cursor: pointer;
@@ -63,22 +187,31 @@ body{
 }
 
 #cabecalho a{
+	cursor: pointer;
 	text-decoration: none;
 	color: black;
 	font-size: 1.0rem;
 	font-weight: 600;
-	
 }
 
-#cabecalho a:hover{
+#botoes-acesso a{
+	cursor: pointer;
+	text-decoration: none;
+	color: black;
+	font-size: 1.0rem;
+	font-weight: 600;
+}
+
+#botoes-acesso a:hover{
 	position: relative;
 	background-color:rgb(150, 150, 255);
 	padding: 10px;
 	border-radius: 100px;
 	transition: 0.25s;
-	
-	
 }
+
+
+
 
 #cabecalho ul{
 	list-style-type: none;
@@ -138,15 +271,30 @@ body{
 
 .botaoContratar{
 	border-radius: 1.2rem;
-	background-color: rgb(158, 203, 255);
+	background-color: rgb(255, 255, 255);
 	font-size: 1rem;
 	border: 3px solid black;
 	font-weight: 600;
 	color: rgb(0, 0, 0);
 	padding: 10px;
 	width: 100%;
+	color: var(--hover)
 }
-
+#b-contrata:hover,
+#b-contrata:focus{
+	transition: 0.7s;
+	border-color: rgb(255, 255, 255);
+	color: rgb(251, 251, 255);
+	cursor: pointer;
+}
+.botaoContratar{
+	--color: rgb(16, 16, 109);
+	--hover: rgb(0, 0, 0);
+}
+.botaoContratar:hover,
+.botaoContratar:focus{
+	box-shadow: inset 15.5rem 0 0 0 var(--color, --hover);
+}
 .botaoContratar:hover{
 	background-color:rgb(201, 226, 255) ;
 	transition: 0.25s;
@@ -168,7 +316,54 @@ form input{
 	font-size: 1.3rem
 	
 }
-
+#paginacao{
+	background-image: url('../img/sobre-nos2.jpg');
+	max-width: 500px;
+	margin: auto;
+	margin-top: 100px;
+	border-radius: 100px;
+	padding: 50px;
+	color: #0a0a0a;
+	font-weight: 600;
+	box-shadow: 5px 5px 15px -1px rgba(0, 0, 0, 0.41);
+	align-items: center;
+}
+#paginacao img{
+	width: 100px;
+	margin-left: 190px;
+}
+#ctt{
+	background-image: url('../img/sobre-nos2.jpg');
+	max-width: 500px;
+	margin: auto;
+	margin-top: 100px;
+	border-radius: 100px;
+	padding: 50px;
+	color: #0a0a0a;
+	font-weight: 600;
+	box-shadow: 5px 5px 15px -1px rgba(0, 0, 0, 0.41);
+	align-items: center;
+}
+#ctt img{
+	width: 100px;
+	margin-left: 190px;
+}
+#b-servicos{
+	background-image: url('../img/sobre-nos2.jpg');
+	max-width: 500px;
+	margin: auto;
+	margin-top: 100px;
+	border-radius: 100px;
+	padding: 50px;
+	color: #0a0a0a;
+	font-weight: 600;
+	box-shadow: 5px 5px 15px -1px rgba(0, 0, 0, 0.41);
+	align-items: center;
+}
+#b-servicos img{
+	width: 100px;
+	margin-left: 190px;
+}
 
 @media(max-width: 1017px){
 	#cabecalho ul{

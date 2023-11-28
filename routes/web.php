@@ -21,6 +21,7 @@ use App\Http\Controllers\AlunoController;
 |
 */
 
+Route::get('search', [SiteController::class, 'search'])->name('search');
 Route::post('/contratar/{aluno}', 'App\http\Controllers\AlunoController@contratar')->name('aluno.contratar');
 Route::middleware('locale')->group(function () {
 
