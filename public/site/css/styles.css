@@ -1,3 +1,4 @@
+
 body{
 	margin: 0;
 	background-image: url('../img/fundo1.png');
@@ -5,6 +6,48 @@ body{
 	font-family: lato, sans-serif;
 
 }
+
+.b-darkmode{
+	background-color: white;
+	border: none;
+	padding: none;
+	cursor: pointer;
+}
+
+
+.b-perfil{
+	background-color: white;
+	border: none;
+	padding: none;
+	cursor: pointer;
+
+}
+#sobre-nos{
+	font-display: 10px;
+	justify-content: space-between;
+	color: #ffffff;
+	background-color: rgb(65, 65, 139);
+	display: flex;
+	border-radius: 20px;
+	padding: 10px;
+	width: fit-content;
+}
+.lupa-pesquisar{
+	display: flex;
+}
+.b-pesquisar{
+	background-color: white;
+	border: none;
+	padding: none;
+	cursor: pointer;
+	
+}
+.material-icons{
+	font-size: 3.0rem;
+}
+ #icons{
+	padding: 10px;
+ }
 
 #cabecalho {
 	background-color: #ffffff;
@@ -41,6 +84,7 @@ body{
 	list-style-type: none;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	gap: 40px;
 	
 }
@@ -76,7 +120,7 @@ body{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: 100px;
+	gap: 50px;
 	margin-top: 25px;
 }
 .botao-card{
@@ -126,9 +170,10 @@ form input{
 }
 
 
-@media(max-width: 915px){
-	#cabecalho a{
-		font-size: 1.2rem;
+@media(max-width: 1017px){
+	#cabecalho ul{
+		font-size: 1.0rem;
+		flex-direction: column;
 	}
 }
 @media(max-width: 827px){
@@ -146,8 +191,17 @@ form input{
 	}
 }
 
-@media(max-width: 511px){
+@media(max-width: 578px){
+	#pesquisar{
+		width: 250px;
+		font-size: 1rem;
+		margin-right: 10px;
+	}
+	#cabecalho{
+		padding: 0;
+	}
 	#cabecalho ul{
+		padding-left: 0;
 		flex-direction: column;
 	}
 }
