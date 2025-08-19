@@ -1,4 +1,4 @@
-# CRUD de Alunos - Projeto Adapti 2023
+Projeto Adapti 2023
 
 Projeto que me rendeu a aprovação na **Adapti Soluções Web** em 2023. É um site full-stack desenvolvido com **PHP Laravel + Blade**, que realiza a gestão de alunos em busca de contratação.
 
